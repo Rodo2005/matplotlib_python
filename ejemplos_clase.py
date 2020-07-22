@@ -24,7 +24,7 @@ import mplcursors  # [Opcional cursores]
 def simple_plot():
     # Dibujar una recta y = 2x
     x = np.linspace(start=0, stop=10, num=11)
-    y = 2*x
+    y = x*2
 
     plt.figure()
     plt.plot(x, y, color='m', marker='^')
@@ -42,7 +42,8 @@ def simple_plot():
     ax.set_title("Mi senoidal")
     ax.set_ylabel("Amplitud")
     ax.set_xlabel("[rad]")
-    plt.show()              # Mostrar el gráfico
+    plt.show()
+    print('')            # Mostrar el gráfico
 
 
 def multi_plot():
@@ -75,7 +76,7 @@ def multi_plot():
 
     ax1.plot(x, np.sin(x), color='b', marker='^', label='y=sin(x)')
     ax1.set_facecolor('whitesmoke')
-    ax1.set_title("Senoidal1")
+    ax1.set_title("Senoidal1", position=(0.35, 0.85))
     ax1.set_ylabel("Y[amplitud]")
     ax1.set_xlabel("X[rads]")
     ax1.set_xlim([0, 4*np.pi])
@@ -84,7 +85,7 @@ def multi_plot():
 
     ax2.plot(x, 2*np.sin(x), color='c', marker='+', label='y=2*sin(x)')
     ax2.set_facecolor('whitesmoke')
-    ax2.set_title("Senoidal2")
+    ax2.set_title("Senoidal2", position=(0.35, 0.85))
     ax2.set_ylabel("Y[amplitud]")
     ax2.set_xlabel("X[rads]")
     ax2.set_xlim([0, 4*np.pi])
@@ -93,7 +94,7 @@ def multi_plot():
 
     ax3.plot(x, 3*np.sin(x), color='g', marker='.', label='y=3*sin(x)')
     ax3.set_facecolor('whitesmoke')
-    ax3.set_title("Senoidal3", position=(0.5, 0.85))  # h=center, v=top
+    ax3.set_title("Senoidal3", position=(0.35, 0.85))  # h=center, v=top 
     ax3.set_ylabel("Y[amplitud]")
     ax3.set_xlabel("X[rads]")
     ax3.set_xlim([0, 4*np.pi])
@@ -102,7 +103,7 @@ def multi_plot():
 
     ax4.plot(x, 4*np.sin(x), color='k', label='y=4*sin(x)')
     ax4.set_facecolor('whitesmoke')
-    ax4.set_title("Senoidal4", position=(0.5, 0.85))  # h=center, v=top
+    ax4.set_title("Senoidal4", position=(0.35, 0.85))  # h=center, v=top
     ax4.set_ylabel("Y[amplitud]")
     ax4.set_xlabel("X[rads]")
     ax4.set_xlim([0, 4*np.pi])
@@ -143,7 +144,7 @@ def marker_color():
 
     ax1.plot(t, vel, color='r')
     ax1.set_facecolor('whitesmoke')
-    ax2.plot(t, vel, c=(0, 0.5, 0.5), ls='--', lw='2')
+    ax2.plot(t, vel, c=(1, 0.5555, 0.8), ls='--', lw='2')
     ax2.set_facecolor('whitesmoke')
     plt.show()
 
@@ -187,6 +188,7 @@ def line_plot():
     ax.set_xticks(custom_ticks)
     ax.set_facecolor('whitesmoke')
     plt.plot(block=False)
+    
 
     # Demostracion de line plot junto con grid layout
     gs = gridspec.GridSpec(2, 2)     # (row, col)
@@ -271,7 +273,7 @@ def bar_plot():
 
     ax1.bar(trimestres, carne, label='carne')
     ax1.set_facecolor('whitesmoke')
-    ax1.legend()
+    ax1.legend(loc='upper right')
 
     ax2.bar(trimestres, fruta, label='fruta')
     ax2.set_facecolor('whitesmoke')
@@ -282,7 +284,7 @@ def bar_plot():
     ax3.legend()
     plt.show(block=False)
 
-    # Bar plot "apilados" (stack)
+    # Bar plot "apilados" (stack)    
     fig = plt.figure()
     fig.suptitle('Gastos Comida', fontsize=16)
     ax = fig.add_subplot()
@@ -308,7 +310,7 @@ def bar_plot():
     ax.bar(trimestres + 2*width, verdura, width=width, label='verdura')
     ax.set_facecolor('whitesmoke')
     ax.legend()
-    ax.set_xticks(trimestres + width / 3)
+    ax.set_xticks(trimestres + 3*width / 3)
     ax.set_xticklabels(trimestres_label)
     plt.show()
 
@@ -403,7 +405,7 @@ def file_plot():
     ax.set_facecolor('whitesmoke')
     plt.show(block=False)
 
-    # Veamos ahora la diferencia si el archivo CSV
+    # Veamos ahora la diferencia si el archivo CSV   
     # lo hubieramos leido con Numpy y generado
     # una matriz de con 2 columnas (col=0 X, col=1 Y)
     datos2 = np.array([[0, 0],
@@ -478,15 +480,15 @@ def file_plot():
 if __name__ == '__main__':
     print("Bienvenidos a otra clase de Inove con Python")
     # ---- Introducción y personalización de gráficos ---- #
-    # simple_plot()
-    # multi_plot()
-    # marker_color()
-    # grid()
+    #simple_plot()
+    multi_plot()
+    #marker_color()
+    #grid()
     # ---------------- Tipos de gráficos ---------------- #
-    line_plot()
-    scatter_plot()
-    bar_plot()
-    pie_plot()
+    #line_plot()
+    #scatter_plot()
+    #bar_plot()
+    #pie_plot()
     # --------------------------------------------------- #
-    cursores()
-    file_plot()
+    #cursores()
+    #file_plot()

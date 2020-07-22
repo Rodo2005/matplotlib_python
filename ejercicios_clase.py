@@ -30,7 +30,7 @@ def ej1():
     # Función que se desea graficar:
     # y1 = x**2
 
-    x = list(range(-10, 11, 1))
+    x = list(range(-100, 101, 1))
     # Estamos aprovechando el concepto de comprension de listas
     # para generar los valores que toma "Y" por cada valor de "X"
     y = [i**2 for i in x]
@@ -39,6 +39,16 @@ def ej1():
     # Graficar el "line plot" de "Y" en función de "X"
     # Colocar la leyenda y el label con el nombre de la función
     # Darle color a la línea a su elección
+
+    fig = plt.figure()
+    fig.suptitle('Hiperbola', fontsize=16)
+    ax = fig.add_subplot()
+    ax.plot(x, y, color='r', label = 'y = x**2')
+    ax.set_facecolor('whitesmoke')
+    ax.set_xlabel('[Rad]')
+    ax.set_ylabel('Amplitud')
+    ax.legend()
+    plt.show()
 
 
 def ej2():
@@ -65,6 +75,19 @@ def ej2():
     # Cada función dibujarla con un color distinto
     # a su elección
 
+    fig = plt.figure()
+    fig.suptitle('Funciones', fontsize=16)
+    ax1 = fig.add_subplot()
+    ax1.set_xlabel('[Rad')
+    ax1.set_ylabel('Amplitud')
+    ax1.set_facecolor('whitesmoke')
+    ax1.plot(x, y1, color='r', label='y1 = x**2')
+    ax1.legend()
+    ax2 = fig.add_subplot()
+    ax2.plot(x, y2, color='m', label='y2 = x**3')
+    ax2.legend()
+    plt.show()
+
 
 def ej3():
     # Scatter Plot
@@ -84,6 +107,16 @@ def ej3():
     # cada gráfico
 
     # Elegir un marker a elección
+
+    fig = plt.figure()
+    fig.suptitle('Tangente Hiperbolica', fontsize=16)
+    ax = fig.add_subplot()
+    ax.set_xlabel('[Rad')
+    ax.set_ylabel('Amplitud')
+    ax.scatter(x, y, color='r', label='y = tangh(x)')
+    ax.legend()
+    plt.show()
+
 
 
 def ej4():
@@ -123,11 +156,42 @@ def ej4():
 
     # Colocar una grilla a elección
 
+    fig = plt.figure()
+    fig.suptitle('Multiples Funciones', fontsize=16)
+
+    ax1 = fig.add_subplot(2, 2, 1)
+    ax2 = fig.add_subplot(2, 2, 2)
+    ax3 = fig.add_subplot(2, 2, 3)
+    ax4 = fig.add_subplot(2, 2, 4)
+
+    ax1.set_facecolor('whitesmoke')
+    ax1.set_xlabel('[Rad')
+    ax1.set_ylabel('Amplitud')
+    ax1.plot(x, y1, color='r', label='y1 = x^2')
+    ax1.legend()
+    ax2.set_facecolor('whitesmoke')
+    ax2.set_xlabel('[Rad')
+    ax2.set_ylabel('Amplitud')
+    ax2.plot(x, y2, color='b', label='y2 = x^3')
+    ax2.legend()
+    ax3.set_facecolor('whitesmoke')
+    ax3.set_xlabel('[Rad')
+    ax3.set_ylabel('Amplitud')
+    ax3.plot(x, y3, color='c', label='y3 = x^4')
+    ax3.legend()
+    ax4.set_facecolor('whitesmoke')
+    ax4.set_xlabel('[Rad')
+    ax4.set_ylabel('Amplitud')
+    ax4.plot(x, y4, color='k', label='y4 = raiz_cuadrada(X)')
+    ax4.legend()
+    plt.show()
+
+
 
 if __name__ == '__main__':
     print("Bienvenidos a otra clase de Inove con Python")
-    ej1()
-    # ej2()
-    # ej2()
-    # ej3()
-    # ej4()
+    #ej1()
+    #ej2()
+    #ej2()
+    #ej3()
+    ej4()

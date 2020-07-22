@@ -104,13 +104,13 @@ def bar_plot():
     sns.barplot(trimestres, verdura, label='verdura', palette='husl', ax=ax3)
     ax3.set_facecolor('whitesmoke')
     ax3.legend()
-    plt.show(block=False)
-
+    plt.show()
+    # block=False
 
 if __name__ == '__main__':
     print("Bienvenidos a otra clase de Inove con Python")
     # ---------------- Tipos de gráficos ---------------- #
-    line_plot()
-    scatter_plot()
+    #line_plot()
+    #scatter_plot()
     bar_plot()
     # --------------------------------------------------- #
